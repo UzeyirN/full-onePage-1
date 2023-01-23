@@ -33,3 +33,14 @@
     color: white;
     
 }
+
+@media screen and (max-width: 992px) {
+
+    .footer-wrapper{
+        height: 200vh;
+    }
+    .footer-item{
+        margin-bottom: 50px;
+    }
+
+}

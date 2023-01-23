@@ -45,11 +45,15 @@ input{
     width: 100%;
     gap: 10px;
 }
-button{
+.add-btn{
     background-color: green;
     color: white;
     border: none;
     width: 50%;
     padding: 10px 0;
     border-radius: 7px;
+}
+.add-btn:hover{
+    background-color: rgb(66, 179, 66);
+    transition: all 0.3s;
 }

@@ -28,7 +28,7 @@ export default () => {
                             <p style={{ color: "white" }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci harum totam nostrum doloribus
                                 repellat perspiciatis laudantium blanditiis? Nihil, atque odio.</p>
                             <div>
-                                <button className='slider-get__button' style={{ width: "100px" }}>GET STARTED</button>
+                                <button className='slider-get__button'>GET STARTED</button>
                                 <button className='slider-down__button' style={{ width: "100px" }}>DOWNLOAD</button>
                             </div>
                         </div>
@@ -39,8 +39,8 @@ export default () => {
                             <p style={{ color: "white" }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci harum totam nostrum doloribus
                                 repellat perspiciatis laudantium blanditiis? Nihil, atque odio.</p>
                             <div>
-                                <button className='slider-get__button' style={{ width: "100px" }}>GET STARTED</button>
-                                <button className='slider-down__button' style={{ width: "100px" }}>DOWNLOAD</button>
+                                <button className='slider-get__button'>GET STARTED</button>
+                                <button className='slider-down__button'>DOWNLOAD</button>
                             </div>
                         </div>
                     </SwiperSlide>
