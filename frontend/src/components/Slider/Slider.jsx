@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-export default () => {
+const Slider = () => {
     return (
         <>
             <div className='slider-wrapper'>
@@ -51,3 +51,5 @@ export default () => {
 
     );
 };
+
+export default Slider;

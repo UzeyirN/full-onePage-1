@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import axios from 'axios';
 
 const Testimonial = () => {
 
@@ -18,6 +19,10 @@ const Testimonial = () => {
         return fetch('http://localhost:3050/authors')
             .then(response => response.json())
             .then(data => setAuthors(data));
+    }
+    const handleDelete = async (id) => {
+        await axios.delete(`http://www.localhost:3050/authors/${id}`);
+        getData()
     }
 
     useEffect(() => {
@@ -40,7 +45,7 @@ const Testimonial = () => {
                                 // install Swiper modules
                                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                                 spaceBetween={50}
-                                slidesPerView={3}
+                                slidesPerView={1}
                                 navigation
                                 pagination={{ clickable: true }}
                                 scrollbar={{ draggable: true }}
@@ -52,36 +57,53 @@ const Testimonial = () => {
                                         width: 300,
                                         slidesPerView: 1,
                                     },
-                                    
+
                                     640: {
                                         width: 640,
                                         slidesPerView: 1,
                                     },
-                                    
+
                                     768: {
                                         width: 768,
                                         slidesPerView: 2,
                                     },
+                                    992: {
+                                        width: 992,
+                                        slidesPerView: 3
+                                    },
+                                    1200: {
+                                        width: 1200,
+                                        slidesPerView: 3
+                                    },
+                                    1400: {
+                                        width: 1400,
+                                        slidesPerView: 3
+                                    },
+                                    2000: {
+                                        width: 2000,
+                                        slidesPerView: 3
+                                    }
                                 }}
                             >
                                 {
-                                    authors?.map((author) => (
+                                    authors?.map(({ _id, author, image, comment, specialty }) => (
                                         <SwiperSlide>
                                             <div className='card-wrapper'>
                                                 <div className='card-top' >
                                                     <div className='card-img'>
-                                                        <img src={author.image} alt="" />
+                                                        <img src={image} alt="" />
                                                     </div>
                                                     <div className='card-author'>
-                                                        <h5>{author.author}</h5>
-                                                        <h5>CEO,Co-Founder</h5>
+                                                        <h5>{author}</h5>
+                                                        <h5>{specialty}</h5>
                                                     </div>
                                                 </div>
                                                 <div className='card-bottom'>
                                                     <p>
-                                                        {author.comment}
+                                                        {comment}
                                                     </p>
                                                 </div>
+                                                <button className='delete-btn' onClick={() => handleDelete(_id)}>DELETE</button>
                                             </div>
                                         </SwiperSlide>
                                     ))

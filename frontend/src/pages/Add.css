@@ -1,4 +1,4 @@
-.addPage__wrapper{
+.addPage__wrapper {
     padding: 10px;
     margin: 150px auto;
     width: 36%;
@@ -12,7 +12,7 @@
 
 }
 
-.form{
+.form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -21,31 +21,36 @@
     gap: 30px;
     width: 80%;
 }
-input{
+
+input {
     width: 100%;
     height: 45px;
     padding: 5px;
     border-radius: 7px;
     border-color: gray;
 }
-.input-checkbox{
+
+.input-checkbox {
     width: 100%;
     display: flex;
     align-items: center;
 }
-.c-box{
+
+.c-box {
     width: 20px;
     height: 20px;
     margin-left: 10px;
 
 }
-.rate-disc__wrapper{
+
+.rate-disc__wrapper {
     display: flex;
     justify-content: space-between;
     width: 100%;
     gap: 10px;
 }
-.add-btn{
+
+.add-btn {
     background-color: green;
     color: white;
     border: none;
@@ -53,7 +58,35 @@ input{
     padding: 10px 0;
     border-radius: 7px;
 }
-.add-btn:hover{
+
+.add-btn:hover {
     background-color: rgb(66, 179, 66);
     transition: all 0.3s;
+}
+
+@media screen and (max-width: 576px) {
+
+    .addPage__wrapper {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .addPage__wrapper {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .addPage__wrapper {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .addPage__wrapper {
+        width: 90%}
 }

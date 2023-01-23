@@ -2,13 +2,28 @@ import React, { useState } from 'react'
 import '../pages/Add.css'
 import axios from 'axios'
 
+// import { useForm } from "react-hook-form";
+// import { yupResolver } from '@hookform/resolvers/yup';
+// import * as yup from 'yup';
+
+// const schema = yup.object().shape({
+//   image: yup.string().required(),
+//   author: yup.string().required(),
+//   specialty: yup.string().required(),
+//   comment: yup.string().required(),
+// })
 
 const Add = () => {
+
+  // const { register, handleSubmit, errors } = useForm({
+  //   resolver: yupResolver(schema)
+  // })
 
   const [state, setState] = useState({
     image: "",
     author: "",
-    comment: "",
+    specialty: "",
+    comment: ""
   });
 
   const handleChange = (e) => {
@@ -18,16 +33,10 @@ const Add = () => {
   const addAuthors = (e) => {
     e.preventDefault();
 
-    if (!state.image || !state.author || !state.comment) return;
+    if (!state.image || !state.author || !state.specialty || !state.comment) return;
 
     axios.post("http://www.localhost:3050/authors", state);
   };
-  // const [authors, setAuthors] = useState(null)
-
-  // const handleDelete = async(id)=>{
-  //   await axios.delete(`http://www.localhost:3050/authors/${id}`);
-  //   getData()
-  // }
 
   return (
     <>
@@ -52,6 +61,16 @@ const Add = () => {
             />
           </div>
 
+          <div className='input-checkbox'>
+            <input
+              name="specialty"
+              type="text"
+              value={state.specialty}
+              placeholder="enter specialty  "
+              onChange={handleChange}
+            />
+          </div>
+
           <div className='rate-disc__wrapper'>
             <input
               name="comment"
@@ -62,26 +81,9 @@ const Add = () => {
             />
 
           </div>
-
           <button className='add-btn'>ADD</button>
         </form>
-
       </div>
-
-
-      {/* <ul>
-        {
-          authors?.map(({ _id, author, comment }) => (
-            <li>
-              <h2>{author}</h2>
-              <p>{comment}</p>
-              <br />
-              <button onClick={() => handleDelete(_id)}>Delete</button>
-            </li>
-          ))
-        }
-      </ul> */}
-
     </>
   )
 }
