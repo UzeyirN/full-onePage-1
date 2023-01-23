@@ -7,7 +7,7 @@ const InfoSection = () => {
             <div className='infoSec-wrapper'>
                 <div className="container">
                     <div className="row">
-                        <div className="col-4">
+                        <div className="col-4 ">
                             <div className='info-card'>
                                 <i class="fa-solid fa-bell infosec-i"></i>
                                 <h3>Modern Design</h3>

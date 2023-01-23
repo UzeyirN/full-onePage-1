@@ -14,7 +14,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active " style={{color:"#f9fffa"}} aria-current="page" to=''>Home</Link>
+                <Link className="nav-link active " style={{color:"black"}} aria-current="page" to=''>Home</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to='projects' style={{color:"gray"}}>Projects</Link>
@@ -40,7 +40,7 @@ const Navbar = () => {
               </li>
             </ul>
             <form className="d-flex">
-              <button className="btn btn-outline-danger" type="submit">COLORLIB</button>
+              <button style={{width:"100%"}} className="btn btn-outline-danger" type="submit">COLORLIB</button>
             </form>
           </div>
         </div>

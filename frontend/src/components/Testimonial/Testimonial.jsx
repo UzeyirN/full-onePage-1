@@ -1,16 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import "../Testimonial/Testimonial.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
+import '../Testimonial/TestmonialCard.css'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import TestMontialCard from './TestmonialCard';
 
 const Testimonial = () => {
+
+
+    const [authors, setAuthors] = useState(null)
+
+    const getData = () => {
+        return fetch('http://localhost:3050/authors')
+            .then(response => response.json())
+            .then(data => setAuthors(data));
+    }
+
+    useEffect(() => {
+        getData()
+    }, [])
+
     return (
         <>
             <div className='testimonial-wrapper'>
@@ -34,21 +47,29 @@ const Testimonial = () => {
                                 onSwiper={(swiper) => console.log(swiper)}
                                 onSlideChange={() => console.log('slide change')}
                             >
-                                <SwiperSlide>
-                                    <TestMontialCard />
-                                </SwiperSlide>
-                                {/* <SwiperSlide><div style={{ border: "1px solid black", height: "200px" }}>
-                                </div></SwiperSlide>
-                                <SwiperSlide><div style={{ border: "1px solid black", height: "200px" }}>
-                                </div></SwiperSlide>
-                                <SwiperSlide><div style={{ border: "1px solid black", height: "200px" }}>
-                                </div></SwiperSlide>
-                                <SwiperSlide><div style={{ border: "1px solid black", height: "200px" }}>
-                                </div></SwiperSlide>
-                                <SwiperSlide><div style={{ border: "1px solid black", height: "200px" }}>
-                                </div></SwiperSlide>
-                                <SwiperSlide><div style={{ border: "1px solid black", height: "200px" }}>
-                                </div></SwiperSlide> */}
+                                {
+                                    authors?.map((author) => (
+                                        <SwiperSlide>
+                                            <div className='card-wrapper'>
+                                                <div className='card-top' >
+                                                    <div className='card-img'>
+                                                        <img src={author.image} alt="" />
+                                                    </div>
+                                                    <div className='card-author'>
+                                                        <h5>{author.author}</h5>
+                                                        <h5>CEO,Co-Founder</h5>
+                                                    </div>
+                                                </div>
+                                                <div className='card-bottom'>
+                                                    <p>
+                                                        {author.comment}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                    ))
+                                }
+
                             </Swiper>
                         </div>
                     </div>
