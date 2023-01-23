@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import '../pages/Add.css'
 import axios from 'axios'
+import { inputSchema } from '../components/Schema/FormValidation'
 
-// import { useForm } from "react-hook-form";
-// import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
 // import * as yup from 'yup';
 
 // const schema = yup.object().shape({
