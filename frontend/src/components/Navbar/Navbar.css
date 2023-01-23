@@ -1,6 +1,9 @@
 Link{
     color:white
 }
+.home-link:hover{
+    color: white;
+}
 .navbar{
     position: absolute;
     top: 0;

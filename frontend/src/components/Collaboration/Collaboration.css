@@ -1,9 +1,9 @@
 .collaboration-wrapper {
     width: 100%;
-    height: 100vh;
     display: flex;
     align-items: center;
     background-color: rgb(230, 228, 228);
+    padding: 100px 0;
 }
 
 .colla-card {

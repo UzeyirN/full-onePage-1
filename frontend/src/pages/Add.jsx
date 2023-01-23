@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import '../pages/Add.css'
 import axios from 'axios'
 
@@ -22,24 +22,13 @@ const Add = () => {
 
     axios.post("http://www.localhost:3050/authors", state);
   };
-
-
-  const [authors, setAuthors] = useState(null)
-
-  const getData = () => {
-    return fetch('http://localhost:3050/authors')
-      .then(response => response.json())
-      .then(data => setAuthors(data));
-  }
+  // const [authors, setAuthors] = useState(null)
 
   // const handleDelete = async(id)=>{
   //   await axios.delete(`http://www.localhost:3050/authors/${id}`);
   //   getData()
   // }
 
-  useEffect(() => {
-    getData()
-  }, [])
   return (
     <>
       <div className='addPage__wrapper'>
@@ -77,26 +66,21 @@ const Add = () => {
           <button>ADD</button>
         </form>
 
-
-
-
-        {/* <ul>
-          {
-            authors?.map(({ _id, author, comment }) => (
-              <li>
-                <h2>{author}</h2>
-                <p>{comment}</p>
-                <br />
-                <button onClick={() => handleDelete(_id)}>Delete</button>
-              </li>
-            ))
-          }
-        </ul> */}
-
       </div>
 
 
-
+      {/* <ul>
+        {
+          authors?.map(({ _id, author, comment }) => (
+            <li>
+              <h2>{author}</h2>
+              <p>{comment}</p>
+              <br />
+              <button onClick={() => handleDelete(_id)}>Delete</button>
+            </li>
+          ))
+        }
+      </ul> */}
 
     </>
   )
