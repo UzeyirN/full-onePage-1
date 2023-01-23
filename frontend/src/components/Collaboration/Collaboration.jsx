@@ -7,10 +7,10 @@ const Collaboration = () => {
             <div className='collaboration-wrapper'>
                 <div className="container">
                     <div className="row">
-                        <div className="col-6">
+                        <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <img src="https://preview.colorlib.com/theme/hexa/images/img_1_long.jpg.webp" alt="" />
                         </div>
-                        <div className="col-6">
+                        <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="colla-card">
                                 <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
                                     <h4>02</h4>

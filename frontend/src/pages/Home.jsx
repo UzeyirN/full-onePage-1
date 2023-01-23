@@ -1,4 +1,5 @@
 import React from 'react'
+import BlogPosts from '../components/BlogPosts/BlogPosts'
 import Collaboration from '../components/Collaboration/Collaboration'
 import InfoSection from '../components/InfoSection/InfoSection'
 import InfraStructure from '../components/InfraStructor/InfraStructure'
@@ -17,6 +18,7 @@ const Home = () => {
       <ProjectSec />
       <ProjectName />
       <Testimonial />
+      <BlogPosts />
     </>
   )
 }

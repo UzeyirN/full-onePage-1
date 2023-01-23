@@ -18,3 +18,18 @@ img {
     width: 100%;
 
 }
+
+@media screen and (max-width: 576px) {
+
+    .infrastructure-wrapper{
+        height: 200vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0;
+    }
+    .infra-p{
+        font-size: 0.5em;
+    }
+
+}

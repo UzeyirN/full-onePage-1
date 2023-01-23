@@ -46,6 +46,23 @@ const Testimonial = () => {
                                 scrollbar={{ draggable: true }}
                                 onSwiper={(swiper) => console.log(swiper)}
                                 onSlideChange={() => console.log('slide change')}
+
+                                breakpoints={{
+                                    300: {
+                                        width: 300,
+                                        slidesPerView: 1,
+                                    },
+                                    
+                                    640: {
+                                        width: 640,
+                                        slidesPerView: 1,
+                                    },
+                                    
+                                    768: {
+                                        width: 768,
+                                        slidesPerView: 2,
+                                    },
+                                }}
                             >
                                 {
                                     authors?.map((author) => (
@@ -69,12 +86,10 @@ const Testimonial = () => {
                                         </SwiperSlide>
                                     ))
                                 }
-
                             </Swiper>
                         </div>
                     </div>
                 </div>
-
             </div>
         </>
     )
